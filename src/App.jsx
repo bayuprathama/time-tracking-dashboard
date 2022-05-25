@@ -6,9 +6,19 @@ import CardNav from './components/CardNav';
 import * as data from './data.json';
 
 function App() {
-  const [cardData, setCardData] = useState(data);
-  const [timeFramesCategory, setTimeFramesCategory] = useState('weekly');
+  const cardData = data;
+  const categoryInitialValue =
+    JSON.parse(window.localStorage.getItem('category:timeframes')) ?? 'daily';
+  const [timeFramesCategory, setTimeFramesCategory] = useState(
+    () => categoryInitialValue
+  );
 
+  useEffect(() => {
+    window.localStorage.setItem(
+      'category:timeframes',
+      JSON.stringify(timeFramesCategory)
+    );
+  }, [timeFramesCategory]);
   return (
     <Container>
       {Object.keys(cardData).length !== 0 && (
