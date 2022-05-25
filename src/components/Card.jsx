@@ -46,7 +46,7 @@ export default function Card({ variant, category, cardData }) {
     <div>
       <div
         style={{
-          backgroundImage: `url(/img/${variants[variant].iconURL})`,
+          backgroundImage: `url(/time-tracking-dashboard/img/${variants[variant].iconURL})`,
           backgroundPosition: 'right 20px top -10px',
         }}
         className={`sm:w-[255px] bg-clip-p-box w-full h-[160px] sm:h-[244px] relative justify-end bg-no-repeat ${variants[variant].backgroundColor} rounded-2xl`}

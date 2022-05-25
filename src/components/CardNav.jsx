@@ -13,7 +13,7 @@ export default function CardNav({
       >
         <div className=" bg-soft-violet sm:h-[355px] sm:p-[30px] p-7 rounded-2xl flex items-center sm:items-start sm:flex-col gap-4">
           <div className="sm:h-[84px] sm:w-[84px] h-[70px] w-[70px] border-2 border-white rounded-full sm:mb-[35px]">
-            <img src="/img/image-jeremy.png" alt="" />
+            <img src="/time-tracking-dashboard/img/image-jeremy.png" alt="" />
           </div>
           <div className="">
             <p className="text-pale-blue">Report for</p>
