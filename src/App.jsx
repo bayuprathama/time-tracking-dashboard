@@ -14,7 +14,7 @@ function App() {
     setCardData(data);
   }
   useEffect(() => {
-    fetchCardData('/src/data.json');
+    fetchCardData('/assets/data.json');
   }, []);
 
   return (
