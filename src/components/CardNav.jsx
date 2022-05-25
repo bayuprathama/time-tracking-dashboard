@@ -6,7 +6,6 @@ export default function CardNav({
   handleCategoryClick,
   stateOfTimeFramesCategory,
 }) {
-  console.log(stateOfTimeFramesCategory);
   return (
     <div className={`${className} sm:h-[520px]`}>
       <div

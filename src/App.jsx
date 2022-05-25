@@ -3,19 +3,11 @@ import './App.css';
 import Container from './components/Container';
 import Card from './components/Card';
 import CardNav from './components/CardNav';
+import * as data from './data.json';
 
 function App() {
-  const [cardData, setCardData] = useState({});
+  const [cardData, setCardData] = useState(data);
   const [timeFramesCategory, setTimeFramesCategory] = useState('weekly');
-
-  async function fetchCardData(url) {
-    const res = await fetch(url);
-    const data = await res.json();
-    setCardData(data);
-  }
-  useEffect(() => {
-    fetchCardData('/assets/data.json');
-  }, []);
 
   return (
     <Container>
