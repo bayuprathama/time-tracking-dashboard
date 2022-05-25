@@ -5,14 +5,18 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 ## Table of contents
 
 - [Overview](#overview)
+  - [Links](#links)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
 
 ## Overview
+
+### Links
+
+- Live Site URL: [live demo](https://bayuprathama.github.io/time-tracking-dashboard/)
 
 ### The challenge
 
@@ -27,10 +31,7 @@ Users should be able to:
 ![desktop-screenshot](./screenshot-desktop.png)
 ![mobile-screenshot](./screenshot-mobile.png)
 
-### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
 
