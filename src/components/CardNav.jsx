@@ -1,13 +1,23 @@
 import React from 'react';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 
 export default function CardNav({
   className,
   handleCategoryClick,
   stateOfTimeFramesCategory,
 }) {
+  const child = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
   return (
-    <div className={`${className} sm:h-[520px]`}>
+    <motion.div variants={child} className={`${className} sm:h-[520px]`}>
       <div
         className={`sm:w-[255px] w-full flex flex-col rounded-2xl bg-dark-blue`}
       >
@@ -25,38 +35,62 @@ export default function CardNav({
         <div className="sm:flex sm:items-center bg-dark-blue py-[25px] sm:px-[30px] px-7 sm:h-[165px] text-desaturated-blue rounded-2xl">
           <ul className="text-sm gap-[15px] sm:text-lg flex sm:flex-col justify-between sm:justify-start">
             <li className="">
-              <button
+              <motion.button
+                whileHover={
+                  stateOfTimeFramesCategory !== 'daily' ? { scale: 1.02 } : {}
+                }
+                whileTap={
+                  stateOfTimeFramesCategory !== 'daily' ? { scale: 0.92 } : {}
+                }
                 onClick={() => handleCategoryClick('daily')}
                 className={`${clsx(
-                  stateOfTimeFramesCategory === 'daily' && 'text-white'
-                )} hover:text-white`}
+                  stateOfTimeFramesCategory === 'daily'
+                    ? 'text-white hover:text-white'
+                    : 'hover:text-pale-blue'
+                )} `}
               >
                 Daily
-              </button>
+              </motion.button>
             </li>
             <li className="">
-              <button
+              <motion.button
+                whileHover={
+                  stateOfTimeFramesCategory !== 'weekly' ? { scale: 1.02 } : {}
+                }
+                whileTap={
+                  stateOfTimeFramesCategory !== 'weekly' ? { scale: 0.92 } : {}
+                }
                 onClick={() => handleCategoryClick('weekly')}
                 className={`${clsx(
-                  stateOfTimeFramesCategory === 'weekly' && 'text-white'
-                )} hover:text-white`}
+                  stateOfTimeFramesCategory === 'weekly'
+                    ? 'text-white hover:text-white'
+                    : 'hover:text-pale-blue'
+                )} `}
               >
                 Weekly
-              </button>
+              </motion.button>
             </li>
             <li className="">
-              <button
+              <motion.button
+                whileHover={
+                  stateOfTimeFramesCategory !== 'monthly' ? { scale: 1.02 } : {}
+                }
+                whileTap={
+                  stateOfTimeFramesCategory !== 'monthly' ? { scale: 0.92 } : {}
+                }
                 onClick={() => handleCategoryClick('monthly')}
                 className={`${clsx(
-                  stateOfTimeFramesCategory === 'monthly' && 'text-white'
-                )} hover:text-white`}
+                  stateOfTimeFramesCategory === 'monthly'
+                    ? 'text-white hover:text-white'
+                    : 'hover:text-pale-blue'
+                )} `}
               >
                 Monthly
-              </button>
+              </motion.button>
             </li>
           </ul>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

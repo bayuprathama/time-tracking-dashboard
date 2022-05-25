@@ -4,6 +4,7 @@ import Container from './components/Container';
 import Card from './components/Card';
 import CardNav from './components/CardNav';
 import * as data from './data.json';
+import { motion } from 'framer-motion';
 
 function App() {
   const cardData = data;
@@ -19,10 +20,23 @@ function App() {
       JSON.stringify(timeFramesCategory)
     );
   }, [timeFramesCategory]);
+
+  const container = {
+    show: {
+      transition: {
+        staggerChildren: 0.07,
+      },
+    },
+  };
   return (
     <Container>
       {Object.keys(cardData).length !== 0 && (
-        <div className="grid-container">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="grid-container"
+        >
           <CardNav
             className="row-span-2"
             handleCategoryClick={setTimeFramesCategory}
@@ -58,7 +72,7 @@ function App() {
             variant="selfCare"
             category={timeFramesCategory}
           />
-        </div>
+        </motion.div>
       )}
     </Container>
   );
